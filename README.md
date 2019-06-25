@@ -1,5 +1,7 @@
 **_The Vitotechnology junior task_**
 
+Netlify Deploy Link - https://unruffled-poitras-767c3f.netlify.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
