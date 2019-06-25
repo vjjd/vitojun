@@ -15,4 +15,6 @@ export default function PageOne() {
 
 const Container = styled.div`
   ${pageContainer}
+  height: calc(100% - 202px);
+  justify-content: center;
 `
