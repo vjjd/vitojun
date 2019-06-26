@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
@@ -17,12 +17,10 @@ export default function Header() {
           onClick={() => setMenuVisibility(!isMenuVisible)}
         />
 
-        {isMenuVisible && (
-          <Menu>
-            <Page to="/1">Page #1</Page>
-            <Page to="/2">Page #2</Page>
-          </Menu>
-        )}
+        <Menu isMenuVisible={isMenuVisible}>
+          <Page to="/1">Page #1</Page>
+          <Page to="/2">Page #2</Page>
+        </Menu>
       </MenuContainer>
     </Container>
   )
@@ -48,7 +46,7 @@ const MenuContainer = styled.div`
 `
 
 const Menu = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 0%;
@@ -56,6 +54,11 @@ const Menu = styled.div`
   background-color: lightgrey;
   border: 1px solid lightcoral;
   padding: 20% 40%;
+  ${props =>
+    props.isMenuVisible &&
+    css`
+      display: flex;
+    `}
 `
 
 const Page = styled(Link)`
