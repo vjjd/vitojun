@@ -7,14 +7,21 @@ import { pageContainer } from '../../utils/theme'
 export default function PageOne() {
   return (
     <Container>
-      <Body isFirstPage />
-      <Footer isFirstPage />
+      <BodyContainer>
+        <Body isFirstPage />
+      </BodyContainer>
+      <Footer />
     </Container>
   )
 }
 
 const Container = styled.div`
   ${pageContainer}
-  height: calc(100% - 202px);
-  justify-content: center;
+  height: 100%;
+`
+
+const BodyContainer = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
 `
